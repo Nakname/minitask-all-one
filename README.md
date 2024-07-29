@@ -8,5 +8,5 @@ This project uses **_HTML_**, **CSS**, **_JS_**, **_React_**.
 
 ## Start
 
-To start this project, clone repo with `clone https://github.com/Nakname/minitask-all-one.git`,
+To start this project, clone repo with `clone https://github.com/Nakname/minitask-all-one.git`,\
 Then write `npm start`.
