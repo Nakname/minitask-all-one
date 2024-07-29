@@ -1,14 +1,82 @@
 import React, { useState } from 'react';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import Pagination from './components/Pagination';
 import ProgramList from './components/ProgramList';
 import Sidebar from './components/Sidebar';
 import TabHeader from './components/TabHeader';
 import UserProgramList from './components/UserProgramList';
 import './styles/App.css';
 
+const allPrograms = [
+  { id: 1, name: 'Программа 1', data: '12-24 ноября' },
+  { id: 2, name: 'Программа 2', data: '12 часов' },
+  { id: 3, name: 'Программа 3', data: '12 часов' },
+  { id: 4, name: 'Программа 4', data: '20 часов' },
+  { id: 5, name: 'Программа 5', data: '15 часов' },
+  { id: 6, name: 'Программа 6', data: '10 часов' },
+  { id: 7, name: 'Программа 7', data: '8 часов' },
+  { id: 8, name: 'Программа 8', data: '9 часов' },
+  { id: 9, name: 'Программа 9', data: '11 часов' },
+  { id: 10, name: 'Программа 10', data: '13 часов' },
+  { id: 11, name: 'Программа 11', data: '14 часов' },
+  { id: 12, name: 'Программа 12', data: '16 часов' },
+  { id: 13, name: 'Программа 13', data: '2 часa' },
+  { id: 14, name: 'Программа 14', data: '3 часa' },
+  { id: 15, name: 'Программа 15', data: '16 часов' },
+  { id: 16, name: 'Программа 16', data: '15 часов' },
+  { id: 17, name: 'Программа 17', data: '17 часов' },
+  { id: 18, name: 'Программа 18', data: '5 часов' },
+  { id: 19, name: 'Программа 18', data: '5 часов' },
+  { id: 20, name: 'Программа 18', data: '5 часов' },
+  { id: 21, name: 'Программа 18', data: '5 часов' },
+  { id: 22, name: 'Программа 18', data: '5 часов' },
+  { id: 23, name: 'Программа 18', data: '5 часов' },
+  { id: 24, name: 'Программа 18', data: '5 часов' },
+  { id: 25, name: 'Программа 18', data: '5 часов' },
+  { id: 26, name: 'Программа 18', data: '5 часов' },
+  { id: 27, name: 'Программа 18', data: '5 часов' },
+  { id: 28, name: 'Программа 18', data: '5 часов' },
+  { id: 29, name: 'Программа 18', data: '5 часов' },
+];
+
+const userPrograms = [
+  { id: 1, name: 'Программа 1', data: '12 часов', status: 'Куплено' },
+  { id: 2, name: 'Программа 2', data: '12 часов', status: 'Куплено' },
+  { id: 3, name: 'Программа 3', data: '12 часов', status: 'Куплено' },
+  { id: 4, name: 'Программа 4', data: '12 часов', status: 'Куплено' },
+  { id: 5, name: 'Программа 5', data: '12 часов', status: 'Куплено' },
+  { id: 6, name: 'Программа 6', data: '12 часов', status: 'Куплено' },
+  { id: 7, name: 'Программа 7', data: '12 часов', status: 'Куплено' },
+  { id: 8, name: 'Программа 8', data: '12 часов', status: 'Куплено' },
+  { id: 9, name: 'Программа 9', data: '12 часов', status: 'Куплено' },
+  { id: 10, name: 'Программа 10', data: '12 часов', status: 'Куплено' },
+  { id: 11, name: 'Программа 11', data: '12 часов', status: 'Куплено' },
+  { id: 12, name: 'Программа 12', data: '12 часов', status: 'Куплено' },
+  { id: 13, name: 'Программа 13', data: '12 часов', status: 'Куплено' },
+  { id: 14, name: 'Программа 14', data: '12 часов', status: 'Куплено' },
+];
+
+
 function App() {
   const [activeTab, setActiveTab] = useState('all');
+  const [currentPage, setCurrentPage] = useState(1);
+  const recordsPerPage = 4;
+
+  const programsToShow = activeTab === 'all' ? allPrograms : userPrograms;
+
+  const totalPages = Math.ceil(programsToShow.length / recordsPerPage);
+
+  const currentPrograms = programsToShow.slice(
+    (currentPage - 1) * recordsPerPage,
+    currentPage * recordsPerPage
+  );
+
+  const handlePageChange = (page) => {
+    if (typeof page === 'number') {
+      setCurrentPage(page);
+    }
+  };
 
   return (
     <div className="App">
@@ -25,7 +93,12 @@ function App() {
           </div>
           <section className="content-section">
             <TabHeader activeTab={activeTab} setActiveTab={setActiveTab} />
-            {activeTab === 'all' ? <ProgramList /> : <UserProgramList />}
+            {activeTab === 'all' ? <ProgramList programs={ currentPrograms } /> : <UserProgramList programs={ currentPrograms } />}
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
           </section>
         </div>
       </div>

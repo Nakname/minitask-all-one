@@ -9,12 +9,12 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         pages.push(i);
       }
     } else {
-      if (currentPage <= 3) {
+      if (currentPage <= 2) {
         pages.push(1, 2, 3, '...', totalPages);
-      } else if (currentPage >= totalPages - 2) {
+      } else if (currentPage >= totalPages - 1) {
         pages.push(1, '...', totalPages - 2, totalPages - 1, totalPages);
       } else {
-        pages.push(1, '...', currentPage, currentPage + 1, currentPage + 2, '...', totalPages);
+        pages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages);
       }
     }
     return pages;
