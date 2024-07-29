@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%
+}
+
+.inner-wrapper {
+  width: 100%;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.sidebar {
+  position: absolute;
+  bottom: 230px;
+  margin-left: 60px;
+}
+
+.profile-header {
+  background-color: #148C88;
+  min-width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-family: 'Montserrat';
+}
+
+.profile-header h2 {
+  margin-left: 327px;
+}
+
+.content-section {
+  margin-left: 341px;
+}
+
+.header {
+  color: #FFF;
+  font-size: 32px;
+  padding: 10px;
+}

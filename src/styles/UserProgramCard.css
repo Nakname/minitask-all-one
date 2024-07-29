@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    border: 2px solid #000;
+    margin: 50px 200px;
+    font-family: 'Open Sans', serif;
+}
+
+.user-card {
+    display: flex;
+    width: 1070px;
+    height: 140px;
+    background-color: #FFF;
+    border: 1px solid #E0E0E0;
+    margin-top: 25px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.user_program-image {
+    width: 212px;
+    margin-right: 20px;
+    background-image: url(../img/cover.png);
+    border-radius: 8px;
+}
+
+.user-card h3 {
+    font-size: 27px;
+    font-weight: initial;
+}
+
+.user-card p {
+    padding-top: 20px;
+    color: #6C6969;
+}
+
+.program-details {
+    flex-grow: 1;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.program-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 90px;
+}
+
+.program-actions button {
+    width: 162px;
+    height: 45px;
+    margin-right: 12px;
+    border: none;
+    background-color: #00A896;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.program-actions button:hover {
+    background-color: #FFF;
+    color: #00A896;
+    border: 2px #00A896 solid;
+}

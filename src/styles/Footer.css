@@ -1,0 +1,21 @@
+.footer {
+    background-color: #FFF;
+    padding: 20px 0;
+    margin-top: 87px;   
+    display: flex;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.45);
+}
+
+.footer a {
+    text-decoration: none;
+    color: #333;
+    padding-right: 80px; 
+}
+
+.footer-info {
+    display: flex;
+}
+
+.copyrights {
+    margin-right: 140px;
+}

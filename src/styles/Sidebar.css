@@ -1,0 +1,31 @@
+.sidebar {
+    background-color: #FFF;
+    font-size: 21px;
+    padding: 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 198px;
+    height: 264px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.sidebar ul li {
+    padding: 20px 0;
+    
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.sidebar ul li a.active {
+    color: #E52127;
+}

@@ -1,0 +1,16 @@
+.tab-header {
+    display: flex;
+    padding-top: 25px;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-right: 10px;
+    font-size: 18px;
+}
+
+.tab-button.active {
+    font-weight: bold;
+}

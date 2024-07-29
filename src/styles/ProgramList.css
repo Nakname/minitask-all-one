@@ -1,0 +1,11 @@
+.program-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 90px;
+    margin-top: 20px;
+}
