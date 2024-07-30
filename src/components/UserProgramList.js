@@ -3,7 +3,7 @@ import '../styles/UserProgramList.css';
 import UserProgramCard from './UserProgramCard';
 
 const UserProgramList = ({ programs }) => {
-  if (programs.length === 0) {
+  if (programs === null || programs.length === 0) {
     return <p className="none-programs">Нет активных программ</p>;
   }
 

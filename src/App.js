@@ -39,7 +39,7 @@ const allPrograms = [
   { id: 28, name: 'Программа 18', data: '5 часов' },
   { id: 29, name: 'Программа 18', data: '5 часов' },
 ];
-
+/*
 const userPrograms = [
   { id: 1, name: 'Программа 1', data: '12 часов', status: 'Куплено' },
   { id: 2, name: 'Программа 2', data: '12 часов', status: 'Куплено' },
@@ -55,15 +55,15 @@ const userPrograms = [
   { id: 12, name: 'Программа 12', data: '12 часов', status: 'Куплено' },
   { id: 13, name: 'Программа 13', data: '12 часов', status: 'Куплено' },
   { id: 14, name: 'Программа 14', data: '12 часов', status: 'Куплено' },
-];
-
+];*/
+const userPrograms = null;
 
 function App() {
   const [activeTab, setActiveTab] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
   const recordsPerPage = 4;
 
-  const programsToShow = activeTab === 'all' ? allPrograms : userPrograms;
+  const programsToShow = activeTab === 'all' ? allPrograms : (userPrograms || []);
 
   const totalPages = Math.ceil(programsToShow.length / recordsPerPage);
 
