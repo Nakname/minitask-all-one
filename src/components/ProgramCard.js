@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/ProgramCard.css';
 
-const ProgramCard = ({ program }) => {
+const ProgramCard = ({ program, onAddToUserPrograms }) => {
   return (
     <div className="program-card">
       <div className="program-image" />
@@ -11,7 +11,7 @@ const ProgramCard = ({ program }) => {
       </div>
       <div className="program-actions">
         <button className="action-more">Подробнее</button>
-        <button className="action-go">Пройти</button>
+        <button className="action-go" onClick={() => onAddToUserPrograms(program)}>Пройти</button>
       </div>
     </div>
   );

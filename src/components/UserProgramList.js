@@ -3,10 +3,6 @@ import '../styles/UserProgramList.css';
 import UserProgramCard from './UserProgramCard';
 
 const UserProgramList = ({ programs }) => {
-  if (programs === null || programs.length === 0) {
-    return <p className="none-programs">Нет активных программ</p>;
-  }
-
     return (
         <div className="user-program-list">
             {programs.map(user_program => (
