@@ -81,28 +81,26 @@ function App() {
             <h2>Иванов Иван</h2>
           </header>
         </section>
-        <div classname="inner-wrapper">
-          <div className="sidebar-section">
-            <Sidebar className="sidebar" />
-          </div>
-          <section className="content-section">
-            <TabHeader activeTab={activeTab} setActiveTab={handleTabChange} />
-            {activeTab === 'all' ? (
-              <ProgramList programs={currentPrograms} onAddToUserPrograms={handleAddToUserPrograms} />
-            ) : (
-              userPrograms.length > 0 ? (
-                <UserProgramList programs={currentPrograms} />
-              ) : (
-                <p className="none-programs">Нет активных программ</p>
-              )
-            )}
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            />
-          </section>
+        <div className="sidebar-section">
+          <Sidebar className="sidebar" />
         </div>
+        <section className="content-section">
+          <TabHeader activeTab={activeTab} setActiveTab={handleTabChange} />
+          {activeTab === 'all' ? (
+            <ProgramList programs={currentPrograms} onAddToUserPrograms={handleAddToUserPrograms} />
+          ) : (
+            userPrograms.length > 0 ? (
+              <UserProgramList programs={currentPrograms} />
+            ) : (
+              <p className="none-programs">Нет активных программ</p>
+            )
+          )}
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
+        </section>
       </div>
       <Footer />
     </div>

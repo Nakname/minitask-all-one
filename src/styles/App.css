@@ -27,7 +27,7 @@
 
 .sidebar {
   position: absolute;
-  bottom: 230px;
+  margin-top: -95px;
   margin-left: 60px;
 }
 
